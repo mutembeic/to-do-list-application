@@ -27,7 +27,7 @@ def cli():
     """Todo List App"""
     while True:
         print_menu()
-        choice = input("Select an option (1-6): ")
+        choice = input("Select an option (1-7): ")
 
         if choice == '1':
             username = input("Enter username: ")
@@ -42,13 +42,14 @@ def cli():
             task_id = input("Enter task ID to delete: ")
             delete_task(task_id)
         elif choice == '5':
-            user_id = input("Enter user ID for the new task: ")
-            name = input("Enter task name: ")
-            description = input("Enter task description (optional): ")
-            due_date = input("Enter due date (optional, YYYY-MM-DD HH:MM:SS): ")
-            priority = input("Enter task priority (optional): ")
-            category_id = input("Enter category ID (optional): ")
-            add_task(user_id, name, description, due_date, priority, category_id)
+           username = input("Enter username for the new task: ")  # Prompt for the username
+           name = input("Enter task name: ")
+           description = input("Enter task description (optional): ")
+           due_date = input("Enter due date (optional, YYYY-MM-DD HH:MM:SS): ")
+           priority = input("Enter task priority (optional): ")
+           category_id = input("Enter category ID (optional): ")
+           add_task(username, name, description, due_date, priority, category_id)
+
         elif choice == '6':
             list_users()
         elif choice == '7':
@@ -56,7 +57,6 @@ def cli():
             break
         else:
             print("Invalid choice. Please select a valid option (1-7).")
-
 
  
 @click.argument('username')
